@@ -1,0 +1,16 @@
+# WebStorm
+# ----------
+.idea
+
+# Ignored Folder
+# ----------
+
+# NodeJS
+# ----------
+node_modules/
+npm-debug.log
+
+# Bower Components
+# ----------------
+bower_components/
+components/

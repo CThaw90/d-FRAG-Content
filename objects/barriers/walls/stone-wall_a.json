@@ -1,0 +1,10 @@
+{
+  "canCollide" : true,
+  "sprite" : {
+    "image" : "/defrag-content/images/fillers/blank.png",
+    "height" : 40,
+    "width" : 745,
+    "left" : 1855,
+    "top" : 381
+  }
+}

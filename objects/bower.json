@@ -3,5 +3,5 @@
     "description": "Object dimensions and configurations for placement and animation",
     "version": "0.0.1",
     "main": "*",
-    "ignore": ["**/.*"]
+    "ignore": ["**/.*", "**/bower.json"]
 }

@@ -1,7 +1,7 @@
 {
   "canCollide" : true,
   "sprite" : {
-    "imageSrc" : "img/objects/moderndoor.png",
+    "image" : "/defrag-content/images/objects/moderndoor.png",
     "height" : 65,
     "width" : 65,
     "left" : 400,

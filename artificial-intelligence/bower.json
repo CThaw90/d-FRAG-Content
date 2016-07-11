@@ -3,5 +3,5 @@
     "description": "The initial introduction scene sequence",
     "version": "0.0.1",
     "main": "roaming-character.json",
-    "ignore": ["**/.*"]
+    "ignore": ["**/.*", "**/bower.json"]
 }

@@ -3,5 +3,5 @@
     "description": "Conversations between characters and talking objects",
     "version": "0.0.1",
     "main": "main_character_and_mr_ree_dialogue.json",
-    "ignore": ["**/.*", "bower.json"]
+    "ignore": ["**/.*", "**/bower.json"]
 }

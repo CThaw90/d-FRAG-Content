@@ -1,0 +1,7 @@
+{
+    "name": "d-FRAG_game_introduction_scene",
+    "description": "The initial introduction scene sequence",
+    "version": "0.0.1",
+    "main": "opening_scene.json",
+    "ignore": ["**/.*"]
+}

@@ -14,3 +14,7 @@ npm-debug.log
 # ----------------
 bower_components/
 components/
+
+# Generated Files
+# ----------------
+*.zip

@@ -1,0 +1,7 @@
+{
+    "name": "d-FRAG_artificial-intelligence",
+    "description": "The initial introduction scene sequence",
+    "version": "0.0.1",
+    "main": "roaming-character.json",
+    "ignore": ["**/.*"]
+}

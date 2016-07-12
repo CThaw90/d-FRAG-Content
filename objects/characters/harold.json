@@ -4,11 +4,11 @@
   "frameRate" : 100,
   "facing": "down",
   "sprite" : {
-    "image" : "/defrag-content/images/characters/main_character.png",
+    "image" : "/defrag-content/images/characters/Harold.png",
     "height" : 80,
     "width" : 50,
-    "left" : 100,
-    "top" : 300,
+    "left" : 50,
+    "top" : 50,
     "y" : 210,
     "x" : 10,
     "animationVector": {
@@ -48,28 +48,28 @@
           "height": 100,
           "width": 72,
           "x": 10,
-          "y": 120
+          "y": 110
         },
         {
           "description": "Standing animation looking right",
           "height": 100,
           "width": 72,
           "x": 82,
-          "y": 120
+          "y": 110
         },
         {
           "description": "Left foot forward animation walking right",
           "height": 100,
           "width": 72,
           "x": 154,
-          "y": 120
+          "y": 110
         },
         {
           "description": "Standing animation looking right",
           "height": 100,
           "width": 72,
           "x": 82,
-          "y": 120
+          "y": 110
         }
       ],
       "animate-movingDown" : [

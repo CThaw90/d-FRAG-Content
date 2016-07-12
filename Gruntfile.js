@@ -7,17 +7,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         gruntConfig: {},
         pkg: grunt.file.readJSON('package.json'),
-        compress: {
-            main: {
-                options: {
-                    mode: 'gzip'
-                },
-                files: [
-                    {dest: './dist/artificial-intelligence.zip', src: ['./artificial-intelligence/**']},
-                    {dest: './dist/conversations.zip', src: ['./conversations/**']},
-                    {dest: './dist/objects.zip', src: ['./objects/**']},
-                    {dest: './dist/scenes.zip', src: ['./scenes/**']}
-                ]
+        zip_directories: {
+            dist: {
+                files: [{filter: 'isDirectory', expand: true, src: ['artificial-intelligence', 'conversations', 'objects', 'scenes'], dest: 'dist'}]
             }
         },
         clean: {
@@ -25,5 +17,5 @@ module.exports = function (grunt) {
         }
     });
     
-    grunt.registerTask('default', ['compress']);
+    grunt.registerTask('default', ['zip_directories:dist']);
 };

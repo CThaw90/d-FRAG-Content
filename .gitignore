@@ -17,4 +17,5 @@ components/
 
 # Generated Files
 # ----------------
+dist/
 *.zip

@@ -106,7 +106,7 @@ module.exports = function (grunt) {
                 command: 'git commit -m "<%= gruntConfig.commitMessage %>"'
             },
             gitPushTest: {
-                command: 'git push origin <%= gruntConfig.gitRemoteStream %>'
+                command: 'git push origin HEAD:<%= gruntConfig.gitRemoteStream %>'
             }
         },
         version: {

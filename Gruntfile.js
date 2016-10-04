@@ -5,11 +5,11 @@ module.exports = function (grunt) {
     grunt.initConfig({
         gruntConfig: {
             artificialIntelligence: grunt.file.readJSON('artificial-intelligence/bower.json'),
-            commitMessage: 'New Release Build: Incrementing Version number to <%= bower.version %>',
             conversations: grunt.file.readJSON('conversations/bower.json'),
             objects: grunt.file.readJSON('objects/bower.json'),
             scenes: grunt.file.readJSON('scenes/bower.json'),
-            bower: grunt.file.readJSON('bower.json')
+            bower: grunt.file.readJSON('bower.json'),
+            commitMessage: 'New Release Build: Incrementing Version number to <%= bower.version %>',
         },
         pkg: grunt.file.readJSON('package.json'),
         copy: {
@@ -128,6 +128,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-zip-directories');
     grunt.loadNpmTasks('grunt-json-minify');
     grunt.loadNpmTasks('grunt-version');
+    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-sed');
     
     grunt.registerTask('zip', [
@@ -136,6 +137,7 @@ module.exports = function (grunt) {
         'zip_directories:objects',
         'zip_directories:scenes'
     ]);
+    grunt.registerTask('deploy', ['default', 'version', 'shell']);
     grunt.registerTask('default', ['dist', 'minify', 'zip']);
     grunt.registerTask('minify', ['json-minify']);
     grunt.registerTask('dist', ['copy']);

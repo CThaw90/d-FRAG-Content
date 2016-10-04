@@ -4,12 +4,12 @@ module.exports = function (grunt) {
     
     grunt.initConfig({
         gruntConfig: {
+            commitMessage: 'New Release Build: Incrementing Version number to <%= grunt.file.readJSON("bower.json").version %>',
             artificialIntelligence: grunt.file.readJSON('artificial-intelligence/bower.json'),
             conversations: grunt.file.readJSON('conversations/bower.json'),
             objects: grunt.file.readJSON('objects/bower.json'),
             scenes: grunt.file.readJSON('scenes/bower.json'),
-            bower: grunt.file.readJSON('bower.json'),
-            commitMessage: 'New Release Build: Incrementing Version number to <%= bower.version %>',
+            bower: grunt.file.readJSON('bower.json')
         },
         pkg: grunt.file.readJSON('package.json'),
         copy: {
@@ -105,7 +105,19 @@ module.exports = function (grunt) {
                 command: 'git add .'
             },
             gitCommitTest: {
-                command: 'git commit -m <%= gruntConfig.commitMessage %>'
+                command: 'git commit -m "<%= gruntConfig.commitMessage %>"'
+            },
+            gitPushTest: {
+                command: 'git push origin test'
+            },
+            gitCheckoutFirstDraft: {
+                command: 'git checkout firstdraft'
+            },
+            gitDeleteLocalTest: {
+                command: 'git branch -D test'
+            },
+            gitDeleteRemoteTest: {
+                command: 'git push origin :test'
             }
         },
         version: {
@@ -137,7 +149,7 @@ module.exports = function (grunt) {
         'zip_directories:objects',
         'zip_directories:scenes'
     ]);
-    grunt.registerTask('deploy', ['default', 'version', 'shell']);
+    grunt.registerTask('deploy', ['default', 'version:project:patch', 'shell']);
     grunt.registerTask('default', ['dist', 'minify', 'zip']);
     grunt.registerTask('minify', ['json-minify']);
     grunt.registerTask('dist', ['copy']);

@@ -9,7 +9,8 @@ module.exports = function (grunt) {
             conversations: grunt.file.readJSON('conversations/bower.json'),
             objects: grunt.file.readJSON('objects/bower.json'),
             scenes: grunt.file.readJSON('scenes/bower.json'),
-            bower: grunt.file.readJSON('bower.json')
+            bower: grunt.file.readJSON('bower.json'),
+            gitRemoteStream: 'firstdraft'
         },
         pkg: grunt.file.readJSON('package.json'),
         copy: {
@@ -98,9 +99,6 @@ module.exports = function (grunt) {
             zip: ['dist']
         },
         shell: {
-            gitCheckoutTest: {
-                command: 'git checkout -b test'
-            },
             gitAddTest: {
                 command: 'git add .'
             },
@@ -108,16 +106,7 @@ module.exports = function (grunt) {
                 command: 'git commit -m "<%= gruntConfig.commitMessage %>"'
             },
             gitPushTest: {
-                command: 'git push origin test'
-            },
-            gitCheckoutFirstDraft: {
-                command: 'git checkout firstdraft'
-            },
-            gitDeleteLocalTest: {
-                command: 'git branch -D test'
-            },
-            gitDeleteRemoteTest: {
-                command: 'git push origin :test'
+                command: 'git push origin <%= gruntConfig.gitRemoteStream %>'
             }
         },
         version: {

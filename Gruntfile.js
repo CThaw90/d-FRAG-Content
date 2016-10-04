@@ -106,7 +106,7 @@ module.exports = function (grunt) {
                 command: 'git commit -m "<%= gruntConfig.commitMessage %>"'
             },
             gitPushTest: {
-                command: 'git push origin HEAD:<%= gruntConfig.gitRemoteStream %> -v'
+                command: 'git push origin HEAD:<%= gruntConfig.gitRemoteStream %>'
             }
         },
         version: {
@@ -116,7 +116,8 @@ module.exports = function (grunt) {
                     'conversations/bower.json',
                     'objects/bower.json',
                     'scenes/bower.json',
-                    'bower.json',
+                    'package.json',
+                    'bower.json'
                 ]
             }
         }

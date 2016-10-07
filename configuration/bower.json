@@ -1,0 +1,12 @@
+{
+    "name": "d_FRAG_configuration",
+    "version": "0.0.1",
+    "description": "d-FRAG base configurations for levels, loaded cutscenes and map images",
+    "dependencies": {},
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "components"
+    ]
+}

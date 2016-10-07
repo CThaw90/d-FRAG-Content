@@ -6,8 +6,10 @@ module.exports = function (grunt) {
         gruntConfig: {
             commitMessage: 'New Release Build: Incrementing Version number to <%= grunt.file.readJSON("bower.json").version %>',
             artificialIntelligence: grunt.file.readJSON('artificial-intelligence/bower.json'),
+            configuration: grunt.file.readJSON('configuration/bower.json'),
             conversations: grunt.file.readJSON('conversations/bower.json'),
             objects: grunt.file.readJSON('objects/bower.json'),
+            levels: grunt.file.readJSON('levels/bower.json'),
             scenes: grunt.file.readJSON('scenes/bower.json'),
             bower: grunt.file.readJSON('bower.json'),
             gitRemoteStream: 'firstdraft'
@@ -16,15 +18,25 @@ module.exports = function (grunt) {
         copy: {
             version: {
                 files: [{
-                    expand: true, 
-                    cwd: 'artificial-intelligence', 
-                    src: ['./**'], 
+                    expand: true,
+                    cwd: 'artificial-intelligence',
+                    src: ['./**'],
                     dest: 'dist/artificial-intelligence/<%= gruntConfig.artificialIntelligence.version %>'
+                }, {
+                    expand: true,
+                    cwd: 'configuration',
+                    src: ['./**'],
+                    dest: 'dist/configuration/<%= gruntConfig.configuration.version %>'
                 }, {
                     expand: true,
                     cwd: 'conversations',
                     src: ['./**'],
                     dest: 'dist/conversations/<%= gruntConfig.conversations.version %>'
+                }, {
+                    expand: true,
+                    cwd: 'levels',
+                    src: ['./**'],
+                    dest: 'dist/levels/<%= gruntConfig.levels.version %>'
                 }, {
                     expand: true,
                     cwd: 'objects',
@@ -56,17 +68,25 @@ module.exports = function (grunt) {
         zip_directories: {
             dist: {
                 files: [{
-                    filter: 'isDirectory', 
-                    expand: true, 
-                    src: ['artificial-intelligence', 'conversations', 'objects', 'scenes'], 
+                    filter: 'isDirectory',
+                    expand: true,
+                    src: ['artificial-intelligence', 'conversations', 'objects', 'scenes'],
                     dest: 'dist'
                 }]
             },
             artificialIntelligence: {
                 files: [{
-                    filter: 'isDirectory', 
-                    expand: true, 
+                    filter: 'isDirectory',
+                    expand: true,
                     src: ['dist/artificial-intelligence/<%= gruntConfig.artificialIntelligence.version %>'],
+                    dest: '.'
+                }]
+            },
+            configuration: {
+                files: [{
+                    filter: 'isDirectory',
+                    expand: true,
+                    src: ['dist/configuration/<%= gruntConfig.configuration.version %>'],
                     dest: '.'
                 }]
             },
@@ -76,6 +96,13 @@ module.exports = function (grunt) {
                     expand: true,
                     src: ['dist/conversations/<%= gruntConfig.conversations.version %>'],
                     dest: '.'
+                }]
+            },
+            levels: {
+                files: [{
+                    filter: 'isDirectory',
+                    expand: true,
+                    src: ['dist/levels/<%= gruntConfig.levels.version %>']
                 }]
             },
             objects: {
@@ -113,8 +140,10 @@ module.exports = function (grunt) {
             project: {
                 src: [
                     'artificial-intelligence/bower.json',
+                    'configuration/bower.json',
                     'conversations/bower.json',
                     'objects/bower.json',
+                    'levels/bower.json',
                     'scenes/bower.json',
                     'package.json',
                     'bower.json'
@@ -134,9 +163,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-sed');
     
     grunt.registerTask('zip', [
-        'zip_directories:artificialIntelligence', 
+        'zip_directories:artificialIntelligence',
+        'zip_directories:configuration',
         'zip_directories:conversations',
         'zip_directories:objects',
+        'zip_directories:levels',
         'zip_directories:scenes'
     ]);
     grunt.registerTask('deploy', ['default', 'version:project:patch', 'shell']);

@@ -1,0 +1,12 @@
+{
+    "name": "d_FRAG_levels",
+    "version": "0.0.1",
+    "description": "All Levels available for play in d-FRAG",
+    "dependencies": {},
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "components"
+    ]
+}

@@ -1,7 +1,7 @@
 {
     "name": "d-FRAG_conversations",
     "description": "Conversations between characters and talking objects",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "main_character_and_mr_ree_dialogue.json",
     "ignore": ["**/.*", "**/bower.json"]
 }

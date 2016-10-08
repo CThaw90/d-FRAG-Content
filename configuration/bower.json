@@ -1,6 +1,6 @@
 {
     "name": "d_FRAG_configuration",
-    "version": "0.0.1",
+    "version": "0.0.4",
     "description": "d-FRAG base configurations for levels, loaded cutscenes and map images",
     "dependencies": {},
     "ignore": [

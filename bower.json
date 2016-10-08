@@ -1,6 +1,6 @@
 {
     "name": "d-frag-content",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "All content for d-FRAG Web hacking game application RPG",
     "dependencies": {},
     "main": "src/main/content.js",
